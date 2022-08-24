@@ -25,18 +25,52 @@ document.getElementById('deposit-btn').addEventListener('click',function (){
     const convertFloatTototalBalance = parseFloat(totalBalance);
     const updatedTotalBalance = convertFLoattoTotalDeposite + convertFloatToNewdepositeAmount ;
     currentTotalBalanceElement.innerText = updatedTotalBalance;
-    
+
+
+  
  
  
    
    
 
-    // totalDepositeElement.innerText = PreviousdepositeAmount;
-    // depositeField.value = "";
-    // const currentBalanceElement = document.getElementById ('cureent-balance');
-    // const currentBalance = currentBalanceElement.innerText 
-    // const currentUpdatedBalance = NewdepositeAmount +  PreviousdepositeAmount;
-    // currentUpdatedBalance = currentBalance ;
-
+  
     
 })
+
+  //Set event handler for withdraw button
+
+  document.getElementById('withdraw-btn').addEventListener('click',function(){
+    const withdrawFieldElement = document.getElementById('withdraw-field');
+    const withdrawAmount = withdrawFieldElement.value;
+    const convertfloatToWithdrawAmount = parseFloat(withdrawAmount);
+
+
+    //Set the value of total withdraw
+
+   const totalWithdrawAmountElement = document.getElementById('total-withdraw');
+   const totalWithdrawAmount = totalWithdrawAmountElement.innerText;
+   const convertfloattoTotalpreviousWithdrawAmount = parseFloat (totalWithdrawAmount );
+
+
+   const currentWithdrawTotal = convertfloattoTotalpreviousWithdrawAmount + convertfloatToWithdrawAmount ;
+   totalWithdrawAmountElement.innerText = currentWithdrawTotal;
+   withdrawFieldElement.value = "";
+
+   const currentTotalBalanceElement = document.getElementById ('current-total-balance');
+   const totalBalance = currentTotalBalanceElement.innerText;
+   const convertFloatTototalBalance = parseFloat(totalBalance);
+   const currentTotalBalance = convertFloatTototalBalance - convertfloatToWithdrawAmount;
+   currentTotalBalanceElement.innerText = currentTotalBalance ;
+
+
+ 
+
+  
+   
+
+
+   
+   
+   
+    })
+    
