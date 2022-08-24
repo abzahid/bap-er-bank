@@ -23,7 +23,7 @@ document.getElementById('deposit-btn').addEventListener('click',function (){
     const currentTotalBalanceElement = document.getElementById ('current-total-balance');
     const totalBalance = currentTotalBalanceElement.innerText;
     const convertFloatTototalBalance = parseFloat(totalBalance);
-    const updatedTotalBalance = convertFLoattoTotalDeposite + convertFloatToNewdepositeAmount ;
+    const updatedTotalBalance = convertFloatTototalBalance + convertFloatToNewdepositeAmount ; 
     currentTotalBalanceElement.innerText = updatedTotalBalance;
 
 
