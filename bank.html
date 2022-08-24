@@ -9,15 +9,15 @@
 </head>
 <body>
     <header>
-        <h1 class="text-5xl text-center mt-6 mb-4">Let's Get Some <span class="font-semibold text-violet-600">Moooooooney</span></h1>
+        <h1 class="text-5xl text-center mt-6 mb-4">Let's Get Some <span class="font-semibold text-violet-600">Moooooooney</span></h1>                                                                                  
       </header>
     
-</body>
+
 <section class="mt-10">
     <div class=" grid grid-cols-3 gap-4 w-3/4 mx-auto ">
         <div class="bg-lime-600 p-8 rounded-xl ">
             <h4 class="text-3xl mb-2">Deposit</h4>
-            <h2 class="text-5xl mb-3 ">$<span class="text-5xl mb-3 " >00</span></h2>
+            <h2 class="text-5xl mb-3 ">$<span id="total-deposite" class="text-5xl mb-3 " >00</span></h2>
             
         </div>
         
@@ -29,7 +29,7 @@
         
         <div class="bg-yellow-600 p-8 rounded-xl ">
             <h4 class="text-3xl mb-2">Balance</h4>
-            <h2 class="text-5xl mb-3 ">$<span class="text-5xl mb-3 " >00</span></h2>
+            <h2 class="text-5xl mb-3 ">$<span class="text-5xl mb-3 " id="current-total-balance" >00</span></h2>
            
         </div>
         
@@ -41,8 +41,8 @@
         <div class="bg-lime-600 p-8 rounded-xl">
             <h4 class="text-3xl mb-2">Please Deposit</h4>
            
-            <input class="block mb-3 p-2 w-3/4" type="text" placeholder="$ Amount you want to deposit">
-            <button class="bg-amber-500 px-4 py-2 text-medium">Deposit</button>
+            <input class="block mb-3 p-2 w-3/4" type="text" placeholder="$ Amount you want to deposit" id="deposit-field">
+            <button class="bg-amber-500 px-4 py-2 text-medium" id="deposit-btn">Deposit</button>
         </div>
         
         <div class="bg-violet-600 p-8 rounded-xl ">
@@ -56,4 +56,6 @@
         
     </div>
 </section>
+<script src="js/dashboard.js"></script>
+</body>
 </html>
