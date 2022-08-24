@@ -23,6 +23,7 @@ document.getElementById('deposit-btn').addEventListener('click',function (){
     const currentTotalBalanceElement = document.getElementById ('current-total-balance');
     const totalBalance = currentTotalBalanceElement.innerText;
     const convertFloatTototalBalance = parseFloat(totalBalance);
+    
     const updatedTotalBalance = convertFloatTototalBalance + convertFloatToNewdepositeAmount ; 
     currentTotalBalanceElement.innerText = updatedTotalBalance;
 
@@ -43,6 +44,14 @@ document.getElementById('deposit-btn').addEventListener('click',function (){
     const withdrawFieldElement = document.getElementById('withdraw-field');
     const withdrawAmount = withdrawFieldElement.value;
     const convertfloatToWithdrawAmount = parseFloat(withdrawAmount);
+    // console.log(convertfloatToWithdrawAmount);
+    withdrawFieldElement.value = "";
+    if(isNaN (convertfloatToWithdrawAmount)) {
+        alert ("Please provide a valid number");
+        return;
+
+    }
+   
 
 
     //Set the value of total withdraw
@@ -50,15 +59,25 @@ document.getElementById('deposit-btn').addEventListener('click',function (){
    const totalWithdrawAmountElement = document.getElementById('total-withdraw');
    const totalWithdrawAmount = totalWithdrawAmountElement.innerText;
    const convertfloattoTotalpreviousWithdrawAmount = parseFloat (totalWithdrawAmount );
-
-
-   const currentWithdrawTotal = convertfloattoTotalpreviousWithdrawAmount + convertfloatToWithdrawAmount ;
-   totalWithdrawAmountElement.innerText = currentWithdrawTotal;
    withdrawFieldElement.value = "";
+
+   //when someone want to withdraw more than his account balance then function will stop and wont go to down after return.
+
+
+   
 
    const currentTotalBalanceElement = document.getElementById ('current-total-balance');
    const totalBalance = currentTotalBalanceElement.innerText;
    const convertFloatTototalBalance = parseFloat(totalBalance);
+   if(convertfloatToWithdrawAmount > convertFloatTototalBalance ) {
+    alert ("You don't have this amount")
+    return;
+  
+   }
+   const currentWithdrawTotal = convertfloattoTotalpreviousWithdrawAmount + convertfloatToWithdrawAmount ;
+   totalWithdrawAmountElement.innerText = currentWithdrawTotal;
+   withdrawFieldElement.value = "";
+   
    const currentTotalBalance = convertFloatTototalBalance - convertfloatToWithdrawAmount;
    currentTotalBalanceElement.innerText = currentTotalBalance ;
 
